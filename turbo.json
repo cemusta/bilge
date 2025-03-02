@@ -7,9 +7,12 @@
       "outputs": ["./dist"]
     },
     "lint": {
+      "outputLogs": "new-only",
+      "cache": false,
       "dependsOn": ["^lint"]
     },
     "start": {
+      "outputLogs": "new-only",
       "cache": false,
       "persistent": true
     },
