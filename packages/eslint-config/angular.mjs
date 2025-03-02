@@ -5,6 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import js from '@eslint/js';
 import { FlatCompat } from '@eslint/eslintrc';
+import turboConfig from 'eslint-config-turbo/flat';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -18,7 +19,8 @@ export const angularConfig = [
   {
     ignores: ['**/node_modules', '**/dist/', 'projects/**/*']
   },
-  ...compat.extends('eslint:recommended', 'prettier', 'eslint-config-turbo'),
+  ...turboConfig,
+  ...compat.extends('eslint:recommended', 'prettier'),
   {
     plugins: {
       'only-warn': onlyWarn
