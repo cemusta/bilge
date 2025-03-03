@@ -1,15 +1,13 @@
 {
-  "name": "angular-latest",
-  "version": "0.0.0",
+  "name": "bilge-storybook",
+  "version": "0.5.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "lint": "eslint ./src/*.stories.tsx --max-warnings 0",
     "watch": "ng build --watch --configuration development",
-    "storybook": "ng run angular-latest:storybook",
-    "build-storybook": "ng run angular-latest:build-storybook"
+    "start": "ng run angular-latest:storybook",
+    "build": "ng run angular-latest:build-storybook"
   },
-  "private": true,
   "dependencies": {
     "@angular/common": "^19.2.0",
     "@angular/compiler": "^19.2.0",
@@ -18,6 +16,7 @@
     "@angular/platform-browser": "^19.2.0",
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/router": "^19.2.0",
+    "@repo/ui": "*",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
@@ -34,6 +33,8 @@
     "@storybook/blocks": "^8.6.3",
     "@storybook/test": "^8.6.3",
     "storybook": "^8.6.3",
+    "eslint": "^9.21.0",
+    "@repo/eslint-config": "*",
     "typescript": "~5.7.2"
   }
 }

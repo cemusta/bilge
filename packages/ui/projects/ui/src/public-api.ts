@@ -3,3 +3,4 @@
  */
 
 export * from './lib/my-counter-button/my-counter-button.component';
+export * from './lib/button/button.component';
