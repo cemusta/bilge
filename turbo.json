@@ -16,6 +16,11 @@
       "cache": false,
       "persistent": true
     },
+    "watch": {
+      "outputLogs": "new-only",
+      "cache": false,
+      "persistent": true
+    },
     "start": {
       "outputLogs": "new-only",
       "cache": false,

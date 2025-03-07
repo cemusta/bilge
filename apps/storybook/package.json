@@ -3,8 +3,8 @@
   "version": "0.5.0",
   "scripts": {
     "ng": "ng",
-    "lint": "eslint ./src/*.stories.tsx --max-warnings 0",
-    "watch": "ng build --watch --configuration development",
+    "lint": "eslint ./src/*.stories.ts --max-warnings 0",
+    "watch": "ng run angular-latest:storybook",
     "start": "ng run angular-latest:storybook",
     "build": "ng run angular-latest:build-storybook"
   },
