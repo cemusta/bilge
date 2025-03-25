@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MyCounterButtonComponent } from '@repo/ui';
+import { MyCounterButtonComponent, PageComponent } from '@repo/ui';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MyCounterButtonComponent],
+  imports: [RouterOutlet, MyCounterButtonComponent, PageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

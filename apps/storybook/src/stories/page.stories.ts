@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { expect, userEvent, within } from '@storybook/test';
 
-import { PageComponent } from './page.component';
+import { PageComponent } from '@repo/ui';
 
 const meta: Meta<PageComponent> = {
   title: 'Example/Page',
   component: PageComponent,
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
-    layout: 'fullscreen',
-  },
+    layout: 'fullscreen'
+  }
 };
 
 export default meta;
@@ -28,5 +28,5 @@ export const LoggedIn: Story = {
 
     const logoutButton = canvas.getByRole('button', { name: /Log out/i });
     await expect(logoutButton).toBeInTheDocument();
-  },
+  }
 };

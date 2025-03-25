@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from '@storybook/test';
 
-import { HeaderComponent } from './header.component';
+import { HeaderComponent } from '@repo/ui';
 
 const meta: Meta<HeaderComponent> = {
   title: 'Example/Header',
@@ -10,13 +10,13 @@ const meta: Meta<HeaderComponent> = {
   tags: ['autodocs'],
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
-    layout: 'fullscreen',
+    layout: 'fullscreen'
   },
   args: {
     onLogin: fn(),
     onLogout: fn(),
-    onCreateAccount: fn(),
-  },
+    onCreateAccount: fn()
+  }
 };
 
 export default meta;
@@ -25,9 +25,9 @@ type Story = StoryObj<HeaderComponent>;
 export const LoggedIn: Story = {
   args: {
     user: {
-      name: 'Jane Doe',
-    },
-  },
+      name: 'Jane Doe'
+    }
+  }
 };
 
 export const LoggedOut: Story = {};
