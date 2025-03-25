@@ -6,7 +6,7 @@
     "lint": "eslint ./src/stories/*.stories.ts --max-warnings 0",
     "watch": "ng run angular-latest:storybook",
     "start": "ng run angular-latest:storybook",
-    "build": "ng run angular-latest:build-storybook",
+    "build-storybook": "ng run angular-latest:build-storybook --output-dir=./dist/storybook",
     "audit": "npm audit fix"
   },
   "dependencies": {
@@ -27,15 +27,16 @@
     "@angular/cli": "^19.2.0",
     "@angular/compiler-cli": "^19.2.0",
     "@chromatic-com/storybook": "^3.2.5",
+    "@repo/eslint-config": "*",
     "@storybook/addon-essentials": "^8.6.3",
     "@storybook/addon-interactions": "^8.6.3",
     "@storybook/addon-onboarding": "^8.6.3",
     "@storybook/angular": "^8.6.3",
     "@storybook/blocks": "^8.6.3",
     "@storybook/test": "^8.6.3",
-    "storybook": "^8.6.3",
+    "chromatic": "^11.27.0",
     "eslint": "^9.21.0",
-    "@repo/eslint-config": "*",
+    "storybook": "^8.6.3",
     "typescript": "~5.7.2"
   }
 }
