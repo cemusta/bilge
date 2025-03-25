@@ -9,7 +9,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "eslint . --max-warnings 0",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .angular"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .angular",
+    "audit": "npm audit fix"
   },
   "dependencies": {
     "@angular/animations": "^19.2.0",

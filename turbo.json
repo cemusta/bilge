@@ -28,6 +28,9 @@
     },
     "clean": {
       "cache": false
+    },
+    "audit": {
+      "cache": false
     }
   }
 }

@@ -9,7 +9,8 @@
     "test": "turbo run test",
     "watch": "turbo run watch",
     "start": "turbo run start",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "audit": "turbo run audit"
   },
   "engines": {
     "node": ">=22"
