@@ -6,7 +6,7 @@ export type VectorDocument = HydratedDocument<Vector>;
 @Schema({ timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' } })
 export class Vector {
   @Prop({ required: true })
-  fileId: string;
+  file: string;
 
   @Prop({ required: true })
   vector: number[];

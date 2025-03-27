@@ -12,8 +12,8 @@ export class VectorRepository {
 
   async insertChunks(chunks: InsertChunkData[]): Promise<number> {
     const insertResult = await this.vectorModel.insertMany(
-      chunks.map(({ fileId, pageContent, vector }) => ({
-        fileId,
+      chunks.map(({ file, pageContent, vector }) => ({
+        file,
         vector,
         pageContent,
       })),
@@ -21,16 +21,16 @@ export class VectorRepository {
     return insertResult.length;
   }
 
-  async insertChunk({ fileId, pageContent, vector }: InsertChunkData) {
+  async insertChunk({ file, pageContent, vector }: InsertChunkData) {
     return await this.vectorModel.create({
-      fileId,
+      file,
       vector,
       pageContent,
     });
   }
 
   async similaritySearch(query: number[]): Promise<ExtractChunkData[]> {
-    const results = await this.vectorModel.aggregate([
+    const results = await this.vectorModel.aggregate<ExtractChunkData>([
       {
         $vectorSearch: {
           index: 'vector_index', // indicate the index we goin to use for our search
@@ -45,8 +45,7 @@ export class VectorRepository {
           // here we define wich fields we want to return, 1 return the field and 0 to hide it
           _id: 1,
           pageContent: 1,
-          fileName: 1,
-          fileId: 1,
+          file: 1,
           score: {
             $meta: 'vectorSearchScore',
           },

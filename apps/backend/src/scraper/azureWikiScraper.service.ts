@@ -3,7 +3,7 @@ import { HttpService } from '@nestjs/axios';
 import { catchError, firstValueFrom } from 'rxjs';
 
 import { ConfigService } from '@nestjs/config';
-import type { HttpError } from '../types/Errors';
+import type { HttpError } from '../types/error.types';
 
 type WikiV2 = {
   id: string; // UUID
@@ -199,6 +199,9 @@ export class AzureWikiScraperService {
         ),
     );
 
-    return response.data;
+    return {
+      link: `https://dev.azure.com/${this.organization}/${this.project}/_wiki/wikis/${wikiName}/${id}`,
+      content: response.data,
+    };
   }
 }
