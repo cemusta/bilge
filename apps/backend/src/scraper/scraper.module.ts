@@ -1,11 +1,12 @@
 import { Module } from '@nestjs/common';
-// import { ScraperService } from './scraper.service';
+
 import { HttpModule } from '@nestjs/axios';
 import { AzureWikiScraperService } from './azureWikiScraper.service';
+import { ScraperController } from './scraper.controller';
 
 @Module({
   imports: [HttpModule],
-  controllers: [],
+  controllers: [ScraperController],
   providers: [AzureWikiScraperService],
   exports: [AzureWikiScraperService],
 })
