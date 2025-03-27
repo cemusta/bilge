@@ -1,4 +1,9 @@
-import { ConfigModule, ConfigModuleOptions } from '@nestjs/config';
+import {
+  ConfigModule,
+  ConfigModuleOptions,
+  ConfigService,
+} from '@nestjs/config';
+import { MongooseModule, MongooseModuleAsyncOptions } from '@nestjs/mongoose';
 import * as Joi from 'joi';
 
 const configOptions: ConfigModuleOptions = {
@@ -18,4 +23,19 @@ const configOptions: ConfigModuleOptions = {
   },
 };
 
+const mongooseOptions: MongooseModuleAsyncOptions = {
+  imports: [ConfigModule],
+  useFactory: (configService: ConfigService) => {
+    return {
+      uri: configService.getOrThrow<string>('DB_CONNECTION'),
+      dbName: 'wiki-content',
+      appName: 'wiki-backend',
+      retryAttempts: 3,
+      lazyConnection: false,
+    };
+  },
+  inject: [ConfigService],
+};
+
 export const configModule = ConfigModule.forRoot(configOptions);
+export const mongooseModule = MongooseModule.forRootAsync(mongooseOptions);
